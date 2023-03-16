@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-  behaviors {
+    behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -17,9 +17,12 @@
             tapping-term-ms = <175>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
+            bindings =
+                <&kp>,
+                <&kp>;
         };
     };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -31,10 +34,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-  &kp TAB  &kp Q  &kp W      &kp E  &kp R      &kp T    &kp Y  &kp U      &kp I    &kp O     &kp P  &kp LEFT_BRACKET
-  &kp ESC  &kp A  &kp S      &kp D  &kp F      &kp G    &kp H  &kp J      &kp K    &kp L  &kp SEMI           &kp SQT
-&kp LSHFT  &kp Z  &kp X      &kp C  &kp V      &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH   &kp RIGHT_SHIFT
-                         &kp LCTRL  &mo 1  &kp SPACE  &kp RET  &mo 2  &kp RCTRL
+  &kp TAB           &kp Q           &kp W             &kp E        &kp R      &kp T    &kp Y        &kp U              &kp I           &kp O               &kp P  &kp LEFT_BRACKET
+  &kp ESC  &hm LEFT_WIN A  &hm LEFT_ALT S  &hm LEFT_SHIFT D  &hm LCTRL F      &kp G    &kp H  &hm RCTRL J  &hm RIGHT_SHIFT K  &hm LEFT_ALT L  &hm RIGHT_WIN SEMI           &kp SQT
+&kp LSHFT           &kp Z           &kp X             &kp C        &kp V      &kp B    &kp N        &kp M          &kp COMMA         &kp DOT            &kp FSLH   &kp RIGHT_SHIFT
+                                                  &kp LCTRL        &mo 1  &kp SPACE  &kp RET        &mo 2          &kp RCTRL
             >;
         };
 
@@ -61,18 +64,18 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &kp PG_UP  &kp HOME    &kp UP    &kp END        &kp INS   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp BACKSPACE  &kp DEL
-&trans  &trans  &trans  &trans  &trans  &trans     &trans    &trans    &trans     &trans         &trans   &trans
-                        &trans   &mo 3  &trans     &trans    &trans    &trans
+&trans   &kp F1   &kp F2  &kp F3  &kp F4   &kp F5  &kp PG_UP  &kp HOME    &kp UP    &kp END        &kp INS   &trans
+&trans   &kp F6   &kp F7  &kp F8  &kp F9  &kp F10  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp BACKSPACE  &kp DEL
+&trans  &kp F11  &kp F12  &trans  &trans   &trans     &trans    &trans    &trans     &trans         &trans   &trans
+                          &trans   &mo 3   &trans     &trans    &trans    &trans
             >;
         };
 
         Layer__3 {
             bindings = <
-&trans      &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans  &trans   &trans   &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans  &trans  &trans  &trans
                                         &trans        &trans        &trans        &trans  &trans  &trans
             >;
         };
